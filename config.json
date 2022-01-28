@@ -1,0 +1,6 @@
+{
+    "database_path": "/path/to/database",
+    "trusted_user_id": 111111,
+    "bot_token": "BOT_TOKEN",
+    "max_message_length": 8
+}
