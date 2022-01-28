@@ -13,3 +13,8 @@ browser = output.eval_js('window.navigator.userAgent')
 p = {'browser': browser, 'notebook_name': notebook_name, }
 requests.post('<YOUR_SERVER_URL>/add', params=p)
 ```
+
+To notify use:
+```
+requests.post('<YOUR_SERVER_URL>/notify', params={'message': '<YOUR_MESSAGE>'})
+```
