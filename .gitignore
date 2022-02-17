@@ -1,2 +1,5 @@
 venv
 venv/
+config.json
+.ipynb_checkpoints
+__pycache__

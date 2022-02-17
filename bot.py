@@ -35,6 +35,25 @@ def get_list():
     return result
 
 
+def get_browser(raw_browser):
+    if 'Opera' in raw_browser or 'OPR' in raw_browser:
+        return 'Opera'
+    elif 'YaBrowser' in raw_browser:
+        return 'Yandex Browser'
+    elif 'Chrome' in raw_browser:
+        return 'Chrome'
+    elif 'Safari' in raw_browser:
+        return 'Safari'
+    elif 'Firefox' in raw_browser:
+        return 'Firefox'
+    elif 'Edg' in raw_browser:
+        return 'Edge'
+    elif 'IE' in raw_browser:
+        return 'Internet Explorer'
+    else:
+        return raw_browser
+    
+
 def prepare_list(notebook_name, n):
     result = []
     candidates = get_list()
@@ -44,7 +63,7 @@ def prepare_list(notebook_name, n):
         try:
             result.append(f"Notebook name: {x['notebook_name']}")
             result.append(f"Time: {x['timestamp']}")
-            result.append(f"Browser: {x['browser']}")
+            result.append(f"Browser: {get_browser(x['browser'])}")
             result.append('')
             result.append('')
         except Exception as err:

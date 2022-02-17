@@ -1,6 +1,8 @@
 {
-    "database_path": "/path/to/database",
-    "trusted_user_id": 111111,
-    "bot_token": "BOT_TOKEN",
+    "database_path": "database.json",
+    "trusted_user_id": 202385863,
+    "bot_token": "5066612963:AAH401Hkx7uSMLk3SkNCPCWCAtmgNJcsIq8",
     "max_message_length": 8
+    
+
 }
