@@ -59,12 +59,15 @@ def prepare_list(notebook_name, n):
     candidates = get_list()
     candidates = [c for c in candidates if
                   not notebook_name or (notebook_name in (c.get('notebook_name') if c.get('notebook_name') else ''))]
-    for x in candidates[-n:]:
+    for x in candidates[-n:]:        
         try:
             result.append(f"Notebook name: {x['notebook_name']}")
             result.append(f"Time: {x['timestamp']}")
             result.append(f"Browser: {get_browser(x['browser'])}")
-            result.append(f"Url: https://colab.research.google.com/drive/{x['noteboook_path'].split('fileId=')[1]}")
+            
+            if 'notebook_path' in x:
+                result.append(f"Url: https://colab.research.google.com/drive/{x['notebook_path'].split('fileId=')[1]}")
+            
             result.append('')
             result.append('')
         except Exception as err:
