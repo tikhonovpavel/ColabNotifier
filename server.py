@@ -47,6 +47,7 @@ def add():
     table.insert({'count': len(list(table)) + 1,
                   'timestamp': datetime.datetime.now().timestamp(),
                   'browser': request.args.get('browser'),
+                  'notebook_path': request.args.get('notebook_path'),
                   'notebook_name': request.args.get('notebook_name')})
 
     return jsonify(get_list())

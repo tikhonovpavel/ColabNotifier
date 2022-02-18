@@ -64,6 +64,7 @@ def prepare_list(notebook_name, n):
             result.append(f"Notebook name: {x['notebook_name']}")
             result.append(f"Time: {x['timestamp']}")
             result.append(f"Browser: {get_browser(x['browser'])}")
+            result.append(f"Url: https://colab.research.google.com/drive/{x['noteboook_path'].split('fileId=')[1]}")
             result.append('')
             result.append('')
         except Exception as err:
