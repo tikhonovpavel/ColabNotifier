@@ -19,6 +19,8 @@ def initialize(wandb_run_id, notebook_name, browser, **config):
     """
     result = {**locals(), **config}
     json.dump(result, open('config.json', 'w'))
+    
+    return result
 
 
 def send_message_to_bot(message, server_address):
