@@ -24,7 +24,7 @@ def initialize(wandb_run_id, notebook_name, browser, **config):
 def send_message_to_bot(message, server_address):
     config = json.load(open('config.json', 'r'))
     
-    postfix = f"\n\n**{config['notebook_name']}**\n*{config['browser']}*\n*{config['source_lang']} to {config['target_lang']}*"
+    postfix = f"\n\n*{config['notebook_name']}*\n*{config['browser']}*\n*{config['source_lang']} to {config['target_lang']}*"
     
     requests.post(f'http://{server_address}/notify', params={
         'message': message + postfix,
