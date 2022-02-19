@@ -80,7 +80,8 @@ def prepare_list(notebook_name, n):
 
 def notify(message=None):
     Updater(config['bot_token']).bot.sendMessage(chat_id=config['trusted_user_id'],
-                                                 text=message if message else DEFAULT_MESSAGE)
+                                                 text=message if message else DEFAULT_MESSAGE,
+                                                 parse_mode='markdown')
 
 
 def listall_command(update: Update, context: CallbackContext) -> None:
